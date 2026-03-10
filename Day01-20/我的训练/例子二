@@ -1,0 +1,17 @@
+#例子二
+x = input("请输入你想要输出几位斐波那契数列：")
+while int(x) <=0:
+    x = input("请重新输入一个正确的数值")
+a , b = 1 , 1
+if int(x) == 1:
+    print(a)
+elif int(x) == 2:
+    print(str(a)+" "+str(b))
+else:
+    print(str(a)+"\n"+str(b))
+    m = [0] * int(x)
+    m[0] ,m[1] = a , b
+    for i in range(2,int(x)):
+        m[i]= m[i-1]+m[i-2]
+        print(str(m[i])+"  ")
+

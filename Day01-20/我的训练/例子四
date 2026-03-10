@@ -1,0 +1,29 @@
+import random
+money = 1000
+while money > 0:
+    print("你现在的总资产是：%d" % money)
+    while True:
+        x = input("请下注")
+        if int(x) <= money and int(x) > 0:
+            break
+    first_point = random.randint(1,7)+random.randint(1,7)
+    if first_point == 7 or first_point == 11:
+        print("点数是：%d,你赢了！" % first_point)
+        money += int(x)
+    elif first_point == 2 or first_point == 3 or first_point == 12:
+        print("点数是：%d,你输了！" % first_point)
+        money -= int(x)
+    else:
+        print("点数是%d，继续掷骰子" % first_point)
+        while True:
+            point = random.randint(1,7)+random.randint(1,7)
+            if point == first_point:
+                print("点数是：%d,你赢了！" % point)
+                money += int(x)
+                break
+            elif point == 7:
+                print("点数是：%d,你输了！" % point)
+                money -= int(x)
+                break 
+else:
+    print("你破产了！")
